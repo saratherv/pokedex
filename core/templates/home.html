@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="margin-top: 5%; width: 60%;">
+        <form action="/core/api/v1/legendary/" method="get">
+            <button type="submit" class="btn btn-primary btn-sm my_class text-nowrap">
+                Legendary
+              </button>
+        </form>
+    <table class="table">
+        <thead>
+            <th> Name </th>
+            <th>typeOne</th>
+            <th>typeTwo</th>
+            <th>total</th>
+            <th>hp</th>
+            <th>attack</th>
+            <th>defense</th>
+            <th>specialAttack</th>
+            <th>specialDefense</th>
+            <th>speed</th>
+            <th>generation</th>
+            <th>isLegendary</th>
+        </thead>
+
+        {% for pokemon in pokemons %}
+            <tr>
+                <td> {{ pokemon.name }} </td>
+                <td> {{ pokemon.typeOne }} </td>
+                <td> {{ pokemon.typeTwo }} </td>
+                <td> {{ pokemon.total }} </td>
+                <td> {{ pokemon.hp }} </td>
+                <td> {{ pokemon.attack }} </td>
+                <td> {{ pokemon.defense }} </td>
+                <td> {{ pokemon.specialAttack }} </td>
+                <td> {{ pokemon.specialDefense }} </td>
+                <td> {{ pokemon.speed }} </td>
+                <td> {{ pokemon.generation }} </td>
+                <td> {{ pokemon.isLegendary }} </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
